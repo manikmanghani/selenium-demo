@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Greeter Demo</title>
+</head>
+<body>
+  <h1 id="heading">Greeter Demo</h1>
+  <label for="name">Your name</label>
+  <input id="name" type="text">
+  <button id="greet" type="button">Greet</button>
+  <p id="message"></p>
+  <p id="error" style="color:red"></p>
+  <script>
+    document.getElementById('greet').addEventListener('click', function () {
+      var name = document.getElementById('name').value.trim();
+      var message = document.getElementById('message');
+      var error = document.getElementById('error');
+      message.textContent = '';
+      error.textContent = '';
+      if (name === '') {
+        error.textContent = 'Please enter a name';
+      } else {
+        message.textContent = 'Hello, ' + name + '!';
+      }
+    });
+  </script>
+</body>
+</html>
